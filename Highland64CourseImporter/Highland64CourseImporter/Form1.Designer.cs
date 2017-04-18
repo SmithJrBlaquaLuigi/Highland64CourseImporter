@@ -36,12 +36,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 185);
+            this.textBox1.Location = new System.Drawing.Point(140, 175);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(773, 26);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.Size = new System.Drawing.Size(684, 26);
+            this.textBox1.TabIndex = 3;
             // 
             // button1
             // 
