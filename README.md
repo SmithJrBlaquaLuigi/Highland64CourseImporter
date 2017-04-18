@@ -1,1 +1,1 @@
-# Highland64CourseImporter
+This project is under maintence. Come back whenever.
