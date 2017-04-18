@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Highland64CourseImporter
 {
@@ -45,6 +46,6 @@ namespace Highland64CourseImporter
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-        }
+        } t
     }
 }
