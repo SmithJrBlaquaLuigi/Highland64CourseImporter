@@ -18,15 +18,16 @@ namespace Highland64CourseImporter
             InitializeComponent();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Stream mystream = null;
             OpenFileDialog openfiledialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Mario Golf 64 ROM |*.z64";
             openFileDialog1.FilterIndex = 1;
 
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-             {
+            {
                 try
                 {
                     if ((mystream = openFileDialog1.OpenFile()) != null)
@@ -39,13 +40,15 @@ namespace Highland64CourseImporter
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Sorry: please select a correct format. Error " +ex.Message);
+                    MessageBox.Show("Sorry: please select a correct format. Error " + ex.Message);
                 }
-             } 
+            }
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
+           
         }
     }
 }
+
