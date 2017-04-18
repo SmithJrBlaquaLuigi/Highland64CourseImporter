@@ -46,6 +46,6 @@ namespace Highland64CourseImporter
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-        } t
+        }
     }
 }
