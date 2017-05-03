@@ -13,6 +13,7 @@ namespace Highland64CourseImporter
 {
     public partial class Form1 : Form
     {
+        private const int Rom_offset = 0x1F00000;
         public Form1()
         {
             InitializeComponent();
