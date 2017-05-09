@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -8,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Highland64CourseImporter
 {
     public partial class Form1 : Form
     {
+        public static string textbox1 = "No File Loaded";
         private const int Rom_offset = 0x1F00000;
         public Form1()
         {
