@@ -29,6 +29,25 @@ namespace Highland64CourseImporter
             openFileDialog1.ShowDialog();
 
             textBox1.Text = openFileDialog1.FileName;
+
+            Stream fs = null;
+
+            try
+            {
+                fs = openFileDialog1.OpenFile();
+
+                var filter = new byte[fs.Length];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Test.\n\n" + ex.Message);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
