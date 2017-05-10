@@ -15,7 +15,7 @@ namespace Highland64CourseImporter
 {
     public partial class Form1 : Form
     {
-        public bool Objectlist();
+        public bool Objectlist { get; set; }
 
         int[] objectlist = {
           0x00,
@@ -65,21 +65,28 @@ namespace Highland64CourseImporter
           0x2C,
           0x2D, //*object list trees, etc..... Gotta go dig deeper down through objects. Shit. I'm kinda lost for a moment.
         };
+        private bool _field;
 
-        public void Leveldata();
-         public bool CheckROM()
+        public bool GetLeveldata()
         {
-            if (!(File.Exists(textBox1.Text))) return false;
-
-            FileInfo rom = new FileInfo(textBox1.Text);
-
-            if (rom.Length < 0x1FFFFF0)
-            {
-                return false;
-            }
             FileStream fs = new FileStream(textBox1.Text, FileMode.Open, FileAccess.ReadWrite);
             BinaryWriter bw = new BinaryWriter(fs);
             BinaryReader br = new BinaryReader(fs);
+
+            bw.Seek(0x0080830, SeekOrigin.Begin);
+            {
+                return false;
+            }
+        }
+
+        public bool GetCheckROM()
+        {
+            return _field;
+        }
+
+        public void SetCheckROM(bool value)
+        {
+            value = _field;
         }
 
         public Form1()
@@ -109,7 +116,7 @@ namespace Highland64CourseImporter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Test.\n\n" + ex.Message);
+                MessageBox.Show("Invaild ROM." + ex.Message);
             }
         }
 
@@ -122,7 +129,7 @@ namespace Highland64CourseImporter
         {
             if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
             {
-                if (CheckROM() == false)
+                if (GetCheckROM() == false)
                 {}
             }
         }
