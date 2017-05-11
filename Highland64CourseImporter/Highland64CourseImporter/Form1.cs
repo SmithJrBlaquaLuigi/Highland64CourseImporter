@@ -86,8 +86,7 @@ namespace Highland64CourseImporter
 
         public void SetCheckROM(bool value)
         {
-            value = _field;
-        }
+            value = _field;}
 
         public Form1()
         {
@@ -130,8 +129,16 @@ namespace Highland64CourseImporter
             if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
             {
                 if (GetCheckROM() == false)
-                {}
+                {
+                    MessageBox.Show("Please select a correct ROM before proceeding.", "Wrong ROM!");
+                    textBox1.Text = "No File Loaded";
+                }
+                else
+                {
+                    return;
+
+                }
+                }
             }
         }
     }
-}
