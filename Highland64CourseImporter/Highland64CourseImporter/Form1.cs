@@ -115,7 +115,7 @@ namespace Highland64CourseImporter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invaild ROM." + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -125,6 +125,7 @@ namespace Highland64CourseImporter
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
+        
         {
             if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
             {
@@ -138,6 +139,7 @@ namespace Highland64CourseImporter
                     return;
 
                 }
+
                 }
             }
         }
