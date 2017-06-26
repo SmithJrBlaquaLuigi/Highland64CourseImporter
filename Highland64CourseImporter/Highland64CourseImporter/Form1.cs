@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using Highland64CourseImporter.Data;
 
 namespace Highland64CourseImporter
 {
     public partial class Form1 : Form
     {
+        public MG64RomFile RomFile;
+
         public bool Objectlist { get; set; }
 
         int[] objectlist = {
@@ -86,7 +89,8 @@ namespace Highland64CourseImporter
 
         public void SetCheckROM(bool value)
         {
-            value = _field;}
+            value = _field;
+        }
 
         public Form1()
         {
@@ -95,8 +99,6 @@ namespace Highland64CourseImporter
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
-            OpenFileDialog openfiledialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Mario Golf 64 ROM |*.z64";
             openFileDialog1.FilterIndex = 1;
 
@@ -104,18 +106,16 @@ namespace Highland64CourseImporter
 
             textBox1.Text = openFileDialog1.FileName;
 
-            Stream fs = null;
-
             try
             {
-                fs = openFileDialog1.OpenFile();
+                RomFile = MG64RomFile.LoadRom(openFileDialog1.FileName);
 
-                var filter = new byte[fs.Length];
-
+                TestForm form = new TestForm(RomFile);
+                form.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Invaild ROM." + ex.Message);
             }
         }
 
@@ -125,22 +125,31 @@ namespace Highland64CourseImporter
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
-        
         {
-            if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
-            {
-                if (GetCheckROM() == false)
-                {
-                    MessageBox.Show("Please select a correct ROM before proceeding.", "Wrong ROM!");
-                    textBox1.Text = "No File Loaded";
-                }
-                else
-                {
-                    return;
+            //if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
+            //{
+            //    if (GetCheckROM() == false)
+            //    {
+            //        MessageBox.Show("Please select a correct ROM before proceeding.", "Wrong ROM!");
+            //        textBox1.Text = "No File Loaded";
+            //    }
+            //    else
+            //    {
+            //        return;
 
-                }
+            //    }
+            //    }
+        }
 
-                }
-            }
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void visualEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Form2 = new Form();
+            Form2.Show();
         }
     }
+}
