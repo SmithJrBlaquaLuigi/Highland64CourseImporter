@@ -1,6 +1,6 @@
-﻿namespace Highland64CourseImporter.Resources
+﻿namespace Highland64CourseImporter
 {
-    partial class Form2
+    partial class VisualEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.glControl1 = new OpenTK.GLControl();
             this.SuspendLayout();
             // 
-            // Form2
+            // glControl1
+            // 
+            this.glControl1.BackColor = System.Drawing.Color.Black;
+            this.glControl1.Location = new System.Drawing.Point(-2, 0);
+            this.glControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.glControl1.Name = "glControl1";
+            this.glControl1.Size = new System.Drawing.Size(906, 646);
+            this.glControl1.TabIndex = 0;
+            this.glControl1.VSync = false;
+            this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
+            // 
+            // VisualEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 697);
-            this.Name = "Form2";
-            this.Text = "Visual Editor";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.ClientSize = new System.Drawing.Size(904, 646);
+            this.Controls.Add(this.glControl1);
+            this.Name = "VisualEditor";
+            this.Text = "VisualEditor";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private OpenTK.GLControl glControl1;
     }
 }

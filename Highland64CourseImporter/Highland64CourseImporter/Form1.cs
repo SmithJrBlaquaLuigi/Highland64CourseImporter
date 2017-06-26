@@ -148,8 +148,8 @@ namespace Highland64CourseImporter
 
         private void visualEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form Form2 = new Form();
-            Form2.Show();
+            VisualEditor form = new VisualEditor();
+            form.Show();
         }
     }
 }
