@@ -99,7 +99,7 @@
             this.visualEditorToolStripMenuItem.Name = "visualEditorToolStripMenuItem";
             this.visualEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
             this.visualEditorToolStripMenuItem.Text = "Visual Editor";
-            this.visualEditorToolStripMenuItem.Click += new System.EventHandler(this.visualEditorToolStripMenuItem_Click);
+            this.visualEditorToolStripMenuItem.Click += new System.EventHandler(this.VisualEditorToolStripMenuItem_Click);
             // 
             // musicPreferenceToolStripMenuItem
             // 

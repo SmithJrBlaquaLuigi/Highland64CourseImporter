@@ -1,7 +1,5 @@
 ﻿using OpenTK;
-using OpenTK.Input;
 using OpenTK.Graphics.OpenGL;
-using OpenTK.Graphics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +21,16 @@ namespace Highland64CourseImporter
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            
+            int w = glControl1.Width;
+            int h = glControl1.Height;
+            glControl1.MakeCurrent();
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.ClearColor(Color.Blue);
+            GL.Ortho(-w / 2, w / 2, -h / 2, h / 2, -1, 1);
+            GL.Viewport(0, 0, w, h);
+            GL.End();
+            glControl1.SwapBuffers();
         }
     }
 }

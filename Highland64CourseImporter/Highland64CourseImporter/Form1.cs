@@ -141,12 +141,12 @@ namespace Highland64CourseImporter
             //    }
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        private void ToolStripTextBox1_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void visualEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void VisualEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VisualEditor form = new VisualEditor();
             form.Show();

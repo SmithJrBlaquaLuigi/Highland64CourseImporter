@@ -48,5 +48,10 @@ namespace Highland64CourseImporter
 
             pbPreview.Image = course.SurfaceMap.GetAsBitmap();
         }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
