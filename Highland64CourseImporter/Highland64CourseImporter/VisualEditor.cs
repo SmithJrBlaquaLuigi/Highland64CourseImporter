@@ -25,7 +25,6 @@ namespace Highland64CourseImporter
         private void glControl1_paint(object sender, EventArgs e)
         {
             GL.ClearColor(Color.Blue);
-
             GL.Clear(ClearBufferMask.ColorBufferBit);
             GL.Begin(PrimitiveType.Quads);
             GL.Color3(Color.Red);
@@ -40,6 +39,7 @@ namespace Highland64CourseImporter
             GL.End();
             glControl1.SwapBuffers();
             glControl1.Refresh();
+            
         }
     }
 }
