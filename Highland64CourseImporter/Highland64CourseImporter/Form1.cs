@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using Highland64CourseImporter.Data;
+using Highland64CourseImporter.Data.CourseBlocks;
+using System.Threading;
+using OpenTK.Graphics.OpenGL;
 
 namespace Highland64CourseImporter
 {
@@ -128,7 +131,7 @@ namespace Highland64CourseImporter
         {
             //if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
             //{
-            //    if (GetCheckROM() == false)
+            //    if (!GetCheckROM() == false)
             //    {
             //        MessageBox.Show("Please select a correct ROM before proceeding.", "Wrong ROM!");
             //        textBox1.Text = "No File Loaded";
@@ -149,6 +152,12 @@ namespace Highland64CourseImporter
         private void VisualEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VisualEditor form = new VisualEditor();
+            form.Show();
+        }
+
+        private void objectEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Objecteditor form = new Objecteditor();
             form.Show();
         }
     }

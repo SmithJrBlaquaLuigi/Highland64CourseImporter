@@ -36,9 +36,9 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.musicPreferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textureEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objectEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,12 +107,6 @@
             this.musicPreferenceToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
             this.musicPreferenceToolStripMenuItem.Text = "Music Preference";
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
             // textureEditorToolStripMenuItem
             // 
             this.textureEditorToolStripMenuItem.Name = "textureEditorToolStripMenuItem";
@@ -124,6 +118,13 @@
             this.objectEditorToolStripMenuItem.Name = "objectEditorToolStripMenuItem";
             this.objectEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
             this.objectEditorToolStripMenuItem.Text = "Object Editor";
+            this.objectEditorToolStripMenuItem.Click += new System.EventHandler(this.objectEditorToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // Form1
             // 
@@ -139,7 +140,7 @@
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Highland 64 Course Importer";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

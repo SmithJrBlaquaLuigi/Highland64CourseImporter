@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
-using Highland64CourseImporter.Data.CourseBlocks;
 
 
 namespace Highland64CourseImporter
@@ -25,16 +24,7 @@ namespace Highland64CourseImporter
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            int w = glControl1.Width;
-            int h = glControl1.Height;
-            glControl1.MakeCurrent();
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.ClearColor(Color.FromArgb(2, 4, 20));
-            GL.Ortho(-w / 2, w / 2, -h / 2, h / 2, -1, 1);
-            GL.Viewport(0, 0, w, h);
-            GL.End();
-            glControl1.SwapBuffers();
+            
         }
     }
 }
