@@ -63,6 +63,26 @@ namespace Highland64CourseImporter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blip {
+            get {
+                object obj = ResourceManager.GetObject("blip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blipSelect {
+            get {
+                object obj = ResourceManager.GetObject("blipSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap highland64_logo {
             get {
                 object obj = ResourceManager.GetObject("highland64 logo", resourceCulture);

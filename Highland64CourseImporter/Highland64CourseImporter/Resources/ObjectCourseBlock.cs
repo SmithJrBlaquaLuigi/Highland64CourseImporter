@@ -108,6 +108,16 @@ namespace Highland64CourseImporter.Data.CourseBlocks
         public ObjectType Type;
         public ushort WidthFactor, HeightFactor;
 
+        public ObjectInfo()
+        {
+            X = 0;
+            Y = 0;
+            Z = 0;
+            Type = ObjectType.Bobomb;
+            HeightFactor = 349;
+            WidthFactor = 104;
+        }
+
         public ObjectInfo(byte[] data)
         {
             X = (short)((data[0] << 8) + data[1]);

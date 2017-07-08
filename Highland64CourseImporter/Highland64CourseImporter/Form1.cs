@@ -1,12 +1,4 @@
-﻿/*
-Copyright (C) 2017 SmithJrBlaquaLuigi
-Highland64 Course Importer is a free, copyleft license for
-software and other kinds of works.
-Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.
-*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.ComponentModel;
@@ -19,9 +11,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using Highland64CourseImporter.Data;
-using Highland64CourseImporter.Data.CourseBlocks;
-using System.Threading;
-using OpenTK.Graphics.OpenGL;
 
 namespace Highland64CourseImporter
 {
@@ -121,6 +110,8 @@ namespace Highland64CourseImporter
             {
                 RomFile = MG64RomFile.LoadRom(openFileDialog1.FileName);
 
+                btnExport.Enabled = true;
+
                 TestForm form = new TestForm(RomFile);
                 form.Show();
             }
@@ -139,7 +130,7 @@ namespace Highland64CourseImporter
         {
             //if (textBox1.Text != "Please load a ROM before you proceed to do anything else.")
             //{
-            //    if (!GetCheckROM() == false)
+            //    if (GetCheckROM() == false)
             //    {
             //        MessageBox.Show("Please select a correct ROM before proceeding.", "Wrong ROM!");
             //        textBox1.Text = "No File Loaded";
@@ -163,10 +154,20 @@ namespace Highland64CourseImporter
             form.Show();
         }
 
-        private void objectEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
-            Objecteditor form = new Objecteditor();
-            form.Show();
+            saveFileDialog1.Filter = "Mario Golf 64 ROM |*.z64";
+
+            saveFileDialog1.ShowDialog();
+
+            try
+            {
+                RomFile.SaveRom(saveFileDialog1.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to save ROM." + ex.Message);
+            }
         }
     }
 }
