@@ -65,15 +65,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\BasicCourseBlock.cs" />
-    <Compile Include="Resources\CourseBlock.cs" />
-    <Compile Include="Resources\CourseNames.cs" />
-    <Compile Include="Resources\CourseTable.cs" />
     <Compile Include="Resources\HalfwordGolfCompression.cs" />
     <Compile Include="Resources\HeightDataEncoding.cs" />
-    <Compile Include="Resources\MG64RomFile.cs" />
     <Compile Include="Resources\ObjectCourseBlock.cs" />
     <Compile Include="Resources\SurfaceCourseBlock.cs" />
+    <Compile Include="SpatialElementRenderer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpatialElementRenderer.Designer.cs">
+      <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SpatialElementRenderer.resx">
+      <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +124,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\highland64 logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\blip.png" />
+    <Content Include="Resources\blipSelect.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
