@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
+using Highland64CourseImporter.Data.CourseBlocks;
 
 
 namespace Highland64CourseImporter
@@ -22,24 +23,18 @@ namespace Highland64CourseImporter
             InitializeComponent();
         }
 
-        private void glControl1_paint(object sender, EventArgs e)
+        private void glControl1_Load(object sender, EventArgs e)
         {
-            GL.ClearColor(Color.Blue);
-            GL.Clear(ClearBufferMask.ColorBufferBit);
-            GL.Begin(PrimitiveType.Quads);
-            GL.Color3(Color.Red);
-            GL.Vertex2(-0.5, 0);
-            GL.Color3(Color.Yellow);
-            GL.Vertex2(0.5, -1.0f);
-            GL.Color3(Color.Green);
-            GL.Vertex2(-1.0f, 0);
-            GL.Color3(Color.Blue);
-            GL.Vertex2(-0.5, 0);
-
+            int w = glControl1.Width;
+            int h = glControl1.Height;
+            glControl1.MakeCurrent();
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.ClearColor(Color.FromArgb(2, 4, 20));
+            GL.Ortho(-w / 2, w / 2, -h / 2, h / 2, -1, 1);
+            GL.Viewport(0, 0, w, h);
             GL.End();
             glControl1.SwapBuffers();
-            glControl1.Refresh();
-            
         }
     }
 }

@@ -39,23 +39,27 @@
             this.textureEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objectEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 175);
+            this.textBox1.Location = new System.Drawing.Point(93, 114);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(684, 26);
+            this.textBox1.Size = new System.Drawing.Size(457, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(751, 235);
+            this.button1.Location = new System.Drawing.Point(501, 153);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 36);
+            this.button1.Size = new System.Drawing.Size(115, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Open ROM";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,9 +67,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 235);
+            this.button2.Location = new System.Drawing.Point(8, 153);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 36);
+            this.button2.Size = new System.Drawing.Size(115, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Close Highland64";
             this.button2.UseVisualStyleBackColor = true;
@@ -79,7 +84,8 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(935, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(623, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,56 +97,69 @@
             this.textureEditorToolStripMenuItem,
             this.objectEditorToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // visualEditorToolStripMenuItem
             // 
             this.visualEditorToolStripMenuItem.Name = "visualEditorToolStripMenuItem";
-            this.visualEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.visualEditorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.visualEditorToolStripMenuItem.Text = "Visual Editor";
             this.visualEditorToolStripMenuItem.Click += new System.EventHandler(this.VisualEditorToolStripMenuItem_Click);
             // 
             // musicPreferenceToolStripMenuItem
             // 
             this.musicPreferenceToolStripMenuItem.Name = "musicPreferenceToolStripMenuItem";
-            this.musicPreferenceToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.musicPreferenceToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.musicPreferenceToolStripMenuItem.Text = "Music Preference";
             // 
             // textureEditorToolStripMenuItem
             // 
             this.textureEditorToolStripMenuItem.Name = "textureEditorToolStripMenuItem";
-            this.textureEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.textureEditorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.textureEditorToolStripMenuItem.Text = "Texture Editor";
             // 
             // objectEditorToolStripMenuItem
             // 
             this.objectEditorToolStripMenuItem.Name = "objectEditorToolStripMenuItem";
-            this.objectEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.objectEditorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.objectEditorToolStripMenuItem.Text = "Object Editor";
-            this.objectEditorToolStripMenuItem.Click += new System.EventHandler(this.objectEditorToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Enabled = false;
+            this.btnExport.Location = new System.Drawing.Point(248, 150);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(115, 23);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "Export ROM";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Highland64CourseImporter.Properties.Resources.highland64_logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(935, 283);
+            this.ClientSize = new System.Drawing.Size(623, 184);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Highland 64 Course Importer";
+            this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,6 +179,8 @@
         private System.Windows.Forms.ToolStripMenuItem musicPreferenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textureEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem objectEditorToolStripMenuItem;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
