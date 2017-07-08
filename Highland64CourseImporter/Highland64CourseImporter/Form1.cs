@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+Copyright (C) 2017 SmithJrBlaquaLuigi
+Highland64 Course Importer is a free, copyleft license for
+software and other kinds of works.
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.ComponentModel;
