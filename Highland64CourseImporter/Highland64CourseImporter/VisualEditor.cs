@@ -22,9 +22,24 @@ namespace Highland64CourseImporter
             InitializeComponent();
         }
 
-        private void glControl1_Load(object sender, EventArgs e)
+        private void glControl1_paint(object sender, EventArgs e)
         {
-            
+            GL.ClearColor(Color.Blue);
+
+            GL.Clear(ClearBufferMask.ColorBufferBit);
+            GL.Begin(PrimitiveType.Quads);
+            GL.Color3(Color.Red);
+            GL.Vertex2(-0.5, 0);
+            GL.Color3(Color.Yellow);
+            GL.Vertex2(0.5, -1.0f);
+            GL.Color3(Color.Green);
+            GL.Vertex2(-1.0f, 0);
+            GL.Color3(Color.Blue);
+            GL.Vertex2(-0.5, 0);
+
+            GL.End();
+            glControl1.SwapBuffers();
+            glControl1.Refresh();
         }
     }
 }
