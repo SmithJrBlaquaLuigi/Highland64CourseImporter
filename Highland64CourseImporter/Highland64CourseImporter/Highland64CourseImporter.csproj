@@ -70,7 +70,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GetViewMatrix.cs" />
     <Compile Include="objecteditor.cs">
       <SubType>Form</SubType>
     </Compile>
