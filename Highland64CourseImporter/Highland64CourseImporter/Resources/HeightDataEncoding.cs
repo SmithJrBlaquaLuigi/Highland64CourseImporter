@@ -205,6 +205,8 @@ namespace Highland64CourseImporter
                     for (int k = 0; k < 16; k++)
                     {
                         int x, y;
+#pragma warning disable 0168 // variable declared but not used.
+
                         short defaultX, defaultZ;
 
                         GetHeightMap2Info(i, j, k, out x, out y);

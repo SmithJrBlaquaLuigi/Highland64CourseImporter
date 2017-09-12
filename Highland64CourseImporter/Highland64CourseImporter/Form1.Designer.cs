@@ -1,4 +1,6 @@
-﻿namespace Highland64CourseImporter
+﻿using System;
+
+namespace Highland64CourseImporter
 {
     partial class Form1
     {
@@ -39,6 +41,8 @@
             this.textureEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objectEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,9 +57,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(751, 235);
+            this.button1.Location = new System.Drawing.Point(752, 235);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 36);
+            this.button1.Size = new System.Drawing.Size(172, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Open ROM";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,7 +69,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(12, 235);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 36);
+            this.button2.Size = new System.Drawing.Size(172, 35);
             this.button2.TabIndex = 2;
             this.button2.Text = "Close Highland64";
             this.button2.UseVisualStyleBackColor = true;
@@ -79,7 +83,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(935, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(934, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,7 +122,6 @@
             this.objectEditorToolStripMenuItem.Name = "objectEditorToolStripMenuItem";
             this.objectEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
             this.objectEditorToolStripMenuItem.Text = "Object Editor";
-            this.objectEditorToolStripMenuItem.Click += new System.EventHandler(this.objectEditorToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -126,13 +129,25 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // btnExport
+            // 
+            this.btnExport.Enabled = false;
+            this.btnExport.Location = new System.Drawing.Point(372, 231);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(172, 35);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "Export ROM";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Highland64CourseImporter.Properties.Resources.highland64_logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(935, 283);
+            this.ClientSize = new System.Drawing.Size(934, 283);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -140,7 +155,7 @@
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Highland 64 Course Importer";
+            this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,6 +175,8 @@
         private System.Windows.Forms.ToolStripMenuItem musicPreferenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textureEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem objectEditorToolStripMenuItem;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

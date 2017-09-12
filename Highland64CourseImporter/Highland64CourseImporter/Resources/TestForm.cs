@@ -19,26 +19,40 @@ namespace Highland64CourseImporter
 
         private Bitmap _underlyingLevelImage;
 
+        private SpatialElementRenderer _spatialElementRenderer { get; set; }
+
+        private ObjectCourseBlock _cbObjectList { get; set; }
+        private ObjectCourseBlock _cbObjectType { get; set; }
+        private ObjectCourseBlock _cbObjects { get; set; }
+        private ObjectCourseBlock _nudWidthScale { get; set; }
+        private ObjectCourseBlock _nudHeightScale { get; set; }
+        private ObjectCourseBlock _gbObjectSelection { get; set; }
+        private ObjectCourseBlock _nudHeight { get; set; }
+        private ObjectCourseBlock lblX { get; set; }
+        private ObjectCourseBlock lblZ { get; set; }
+        private ObjectCourseBlock _btnRemoveOld { get; set; }
+        public int SelectedIndex { get; internal set; }
+        private object Items { get; set; }
+
         public TestForm(MG64RomFile rom)
+            
         {
             InitializeComponent();
 
             _rom = rom;
 
-            spatialElementRenderer.MinX = 0;
-            spatialElementRenderer.MinY = 0;
-            spatialElementRenderer.MaxX = 0x1000;
-            spatialElementRenderer.MaxY = 0x2000;
+            _spatialElementRenderer.MinX = 0;
+            _spatialElementRenderer.MinY = 0;
+            _spatialElementRenderer.MaxX = 0x1000;
+            _spatialElementRenderer.MaxY = 0x2000;
 
             foreach (string s in Enum.GetNames(typeof(ObjectInfo.ObjectType)))
             {
-                cbObjectType.Items.Add(s);
+                cbCourse.Items.Add(s);
             }
 
-            Initialize();
-
-            spatialElementRenderer.ObjectSelected += ObjectClicked;
-            spatialElementRenderer.ObjectXYChanged += ObjectXYChanged;
+            _spatialElementRenderer.ObjectSelected += ObjectClicked;
+            _spatialElementRenderer.ObjectXYChanged += ObjectXYChanged;
         }
 
         private void Initialize()
@@ -78,17 +92,17 @@ namespace Highland64CourseImporter
 
         private void UpdateObjectList(int selectedObjectIndex = 0)
         {
-            cbObjectList.Items.Clear();
+            cbCourse.Items.Clear();
 
             for (int i = 0; i < _levelObjects.Count; i++)
             {
-                cbObjectList.Items.Add("Object " + (i + 1));
+                cbCourse.Items.Add("Object " + (i + 1));
             }
 
-            if (cbObjectList.Items.Count > selectedObjectIndex)
-                cbObjectList.SelectedIndex = selectedObjectIndex;
-            else if(cbObjectList.Items.Count > 0)
-                cbObjectList.SelectedIndex = 0;
+            if (cbCourse.Items.Count > selectedObjectIndex)
+                _cbObjectList.SelectedIndex = selectedObjectIndex;
+            else if (cbCourse.Items.Count > 0)
+                _cbObjectList.SelectedIndex = 0;
         }
 
         private void UpdateImage()
@@ -96,20 +110,20 @@ namespace Highland64CourseImporter
             pbPreview.Image = _underlyingLevelImage;
             if (EnableObjects)
             {
-                spatialElementRenderer.ClearElements();
+                _spatialElementRenderer.ClearElements();
 
                 AddLevelElements();
 
-                spatialElementRenderer.ReDraw();
+                _spatialElementRenderer.ReDraw();
             }
         }
 
-        
+
         private void AddLevelElements()
         {
             foreach (ObjectInfo obj in _levelObjects)
             {
-                spatialElementRenderer.AddElement(obj, obj.X, obj.Z);
+                _spatialElementRenderer.AddElement(obj, obj.X, obj.Z);
             }
         }
 
@@ -117,7 +131,7 @@ namespace Highland64CourseImporter
         {
             get
             {
-                return cbObjects.Checked;
+                return _cbObjects.Checked;
             }
         }
 
@@ -136,13 +150,13 @@ namespace Highland64CourseImporter
         {
             get
             {
-                if (cbObjectList.SelectedIndex < 0 || cbObjectList.SelectedIndex >= _levelObjects.Count)
+                if (_cbObjectList.SelectedIndex < 0 || _cbObjectList.SelectedIndex >= _levelObjects.Count)
                     return null;
 
-                return _levelObjects[cbObjectList.SelectedIndex];
+                return _levelObjects[_cbObjectList.SelectedIndex];
             }
         }
-
+        
         private void ObjectXYChanged(object obj, double newX, double newY)
         {
             ObjectInfo objI = (ObjectInfo)obj;
@@ -153,11 +167,11 @@ namespace Highland64CourseImporter
 
         private void ObjectClicked(object obj)
         {
-            cbObjectList.SelectedIndexChanged -= cbObjectList_SelectedIndexChanged;
+            _cbObjectList.SelectedIndexChanged -= cbObjectList_SelectedIndexChanged;
 
-            cbObjectList.SelectedIndex = _levelObjects.IndexOf((ObjectInfo)obj);
+            _cbObjectList.SelectedIndex = _levelObjects.IndexOf((ObjectInfo)obj);
 
-            cbObjectList.SelectedIndexChanged += cbObjectList_SelectedIndexChanged;
+            _cbObjectList.SelectedIndexChanged += cbObjectList_SelectedIndexChanged;
 
             //Basically update the ui and silently set the dropdown box
             UpdateObjectUI((ObjectInfo)obj);
@@ -165,11 +179,11 @@ namespace Highland64CourseImporter
 
         private void UpdateObjectUI(ObjectInfo obj)
         {
-            nudHeight.Value = obj.Y;
-            nudHeightScale.Value = obj.HeightFactor;
-            nudWidthScale.Value = obj.WidthFactor;
+            
+            _nudHeightScale.Value = obj.HeightFactor;
+            _nudWidthScale.Value = obj.WidthFactor;
 
-            cbObjectType.SelectedIndex = (int)obj.Type;
+            _cbObjectType.SelectedIndex = (int)obj.Type;
 
             lblX.Text = obj.X.ToString();
             lblZ.Text = obj.Z.ToString();
@@ -177,60 +191,60 @@ namespace Highland64CourseImporter
 
         private void cbObjects_CheckedChanged(object sender, EventArgs e)
         {
-            gbObjectSelection.Enabled = cbObjects.Checked;
+            _gbObjectSelection.Enabled = _cbObjects.Checked;
 
-            if (cbObjects.Checked)
+            if (_cbObjects.Checked)
             {
                 AddLevelElements();
-                spatialElementRenderer.ReDraw();
+                _spatialElementRenderer.ReDraw();
             }
             else
             {
-                spatialElementRenderer.ClearElements();
+                _spatialElementRenderer.ClearElements();
             }
         }
 
         private void cbObjectList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnRemoveOld.Enabled = false;
+            _btnRemoveOld.Enabled = false;
 
-            if (cbObjectList.SelectedIndex >= _levelObjects.Count)
+            if (_cbObjectList.SelectedIndex >= _levelObjects.Count)
                 return;
 
-            ObjectInfo info = _levelObjects[cbObjectList.SelectedIndex];
+            ObjectInfo info = _levelObjects[_cbObjectList.SelectedIndex];
 
             if (SelectedObject == null) return;
 
-            btnRemoveOld.Enabled = true;
+            _btnRemoveOld.Enabled = true;
 
             UpdateObjectUI(SelectedObject);
 
             //Highlight it
-            spatialElementRenderer.Select(SelectedObject);
+            _spatialElementRenderer.Select(SelectedObject);
         }
 
         private void cbObjectType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SelectedObject != null)
-                SelectedObject.Type = (ObjectInfo.ObjectType)cbObjectType.SelectedIndex;
+                SelectedObject.Type = (ObjectInfo.ObjectType)_cbObjectType.SelectedIndex;
         }
 
         private void nudHeight_ValueChanged(object sender, EventArgs e)
         {
             if (SelectedObject != null)
-                SelectedObject.Y = (short)nudHeight.Value;
+                SelectedObject.Y = (short)_nudHeight.Value;
         }
 
         private void nudHeightScale_ValueChanged(object sender, EventArgs e)
         {
             if (SelectedObject != null)
-                SelectedObject.HeightFactor = (ushort)nudHeightScale.Value;
+                SelectedObject.HeightFactor = (ushort)_nudHeightScale.Value;
         }
 
         private void nudWidthScale_ValueChanged(object sender, EventArgs e)
         {
-            if (SelectedObject != null) 
-                SelectedObject.WidthFactor = (ushort)nudWidthScale.Value;
+            if (SelectedObject != null)
+                SelectedObject.WidthFactor = (ushort)_nudWidthScale.Value;
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

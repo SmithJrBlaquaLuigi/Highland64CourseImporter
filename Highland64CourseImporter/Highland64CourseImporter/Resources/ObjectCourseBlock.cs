@@ -13,6 +13,16 @@ namespace Highland64CourseImporter.Data.CourseBlocks
         public byte ObjectCount { get; private set; }
 
         public List<ObjectInfo> ObjectList { get; private set; }
+        public object Items { get; internal set; }
+        public int SelectedIndex { get; internal set; }
+        public Action<object, EventArgs> SelectedIndexChanged { get; internal set; }
+        public ushort Value { get; internal set; }
+        public bool Enabled { get; internal set; }
+        public bool Checked { get; internal set; }
+        public string Text { get; internal set; }
+        public object Clear { get; internal set; }
+
+        public bool Add;
 
         public ObjectCourseBlock(byte[] data, int offset, int length)
             : base(data, offset, length)
@@ -107,6 +117,16 @@ namespace Highland64CourseImporter.Data.CourseBlocks
         public short X, Y, Z;
         public ObjectType Type;
         public ushort WidthFactor, HeightFactor;
+
+        public ObjectInfo()
+        {
+            X = 0;
+            Y = 0;
+            Z = 0;
+            Type = ObjectType.Bobomb;
+            HeightFactor = 349;
+            WidthFactor = 104;
+        }
 
         public ObjectInfo(byte[] data)
         {

@@ -6,6 +6,10 @@ Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 */
 
+
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -79,7 +83,6 @@ namespace Highland64CourseImporter
           0x2C,
           0x2D, //*object list trees, etc..... Gotta go dig deeper down through objects. Shit. I'm kinda lost for a moment.
         };
-        private bool _field;
 
         public bool GetLeveldata()
         {
@@ -93,15 +96,6 @@ namespace Highland64CourseImporter
             }
         }
 
-        public bool GetCheckROM()
-        {
-            return _field;
-        }
-
-        public void SetCheckROM(bool value)
-        {
-            value = _field;
-        }
 
         public Form1()
         {
@@ -117,7 +111,7 @@ namespace Highland64CourseImporter
 
             textBox1.Text = openFileDialog1.FileName;
 
-            try
+           try
             {
                 RomFile = MG64RomFile.LoadRom(openFileDialog1.FileName);
 
@@ -126,7 +120,7 @@ namespace Highland64CourseImporter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invaild ROM." + ex.Message);
+                MessageBox.Show("Invaild ROM" + ex.Message);
             }
         }
 
@@ -167,6 +161,11 @@ namespace Highland64CourseImporter
         {
             Objecteditor form = new Objecteditor();
             form.Show();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
