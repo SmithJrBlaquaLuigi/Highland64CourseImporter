@@ -13,6 +13,7 @@ namespace Highland64CourseImporter
 {
     public partial class TestForm : Form
     {
+        //ROM
         private MG64RomFile _rom;
 
         private List<ObjectInfo> _levelObjects;
