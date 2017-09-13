@@ -43,6 +43,7 @@ namespace Highland64CourseImporter
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExport = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.levelImporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,8 @@ namespace Highland64CourseImporter
             this.visualEditorToolStripMenuItem,
             this.musicPreferenceToolStripMenuItem,
             this.textureEditorToolStripMenuItem,
-            this.objectEditorToolStripMenuItem});
+            this.objectEditorToolStripMenuItem,
+            this.levelImporterToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -140,6 +142,13 @@ namespace Highland64CourseImporter
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // levelImporterToolStripMenuItem
+            // 
+            this.levelImporterToolStripMenuItem.Name = "levelImporterToolStripMenuItem";
+            this.levelImporterToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.levelImporterToolStripMenuItem.Text = "Level Importer";
+            this.levelImporterToolStripMenuItem.Click += new System.EventHandler(this.levelImporterToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -156,6 +165,7 @@ namespace Highland64CourseImporter
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -177,6 +187,7 @@ namespace Highland64CourseImporter
         private System.Windows.Forms.ToolStripMenuItem objectEditorToolStripMenuItem;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem levelImporterToolStripMenuItem;
     }
 }
 

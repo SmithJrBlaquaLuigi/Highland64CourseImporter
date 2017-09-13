@@ -45,6 +45,7 @@
     <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.3.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -69,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="objecteditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,10 +99,10 @@
       <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\SurfaceCourseBlock.cs" />
-    <Compile Include="Resources\TestForm.cs">
+    <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\TestForm.Designer.cs">
+    <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VisualEditor.cs">
@@ -106,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="objecteditor.resx">
       <DependentUpon>objecteditor.cs</DependentUpon>
@@ -123,7 +133,7 @@
     <EmbeddedResource Include="Resources\SpatialElementRenderer.resx">
       <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\TestForm.resx">
+    <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisualEditor.resx">
