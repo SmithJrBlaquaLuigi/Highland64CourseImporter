@@ -104,24 +104,24 @@ namespace Highland64CourseImporter
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            
             openFileDialog1.Filter = "Mario Golf 64 ROM |*.z64";
             openFileDialog1.FilterIndex = 1;
 
-            openFileDialog1.ShowDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
 
-            textBox1.Text = openFileDialog1.FileName;
+                textBox1.Text = openFileDialog1.FileName;
 
-           try
+            else
+                return;
+            
             {
                 RomFile = MG64RomFile.LoadRom(openFileDialog1.FileName);
 
                 TestForm form = new TestForm(RomFile);
                 form.Show();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invaild ROM" + ex.Message);
-            }
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -144,6 +144,7 @@ namespace Highland64CourseImporter
 
             //    }
             //    }
+            levelImporterToolStripMenuItem.Enabled = true;
         }
 
         private void ToolStripTextBox1_Click(object sender, EventArgs e)
@@ -166,6 +167,17 @@ namespace Highland64CourseImporter
         private void btnExport_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void levelImporterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            form.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            levelImporterToolStripMenuItem.Enabled = false;
         }
     }
 }
