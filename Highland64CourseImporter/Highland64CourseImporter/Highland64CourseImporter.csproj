@@ -64,6 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimatedModel.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Billboard.cs" />
+    <Compile Include="BitmapFont.cs" />
+    <Compile Include="BoundingVolume.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="Fog.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,14 +83,37 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frustum.cs" />
+    <Compile Include="GLSL.cs" />
+    <Compile Include="Intersection.cs" />
+    <Compile Include="Light.cs" />
+    <Compile Include="LoaderDDS.cs" />
+    <Compile Include="LoaderGDI.cs" />
+    <Compile Include="LoaderStatics.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="MathExt.cs" />
+    <Compile Include="Mesh.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Object2D.cs" />
     <Compile Include="objecteditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="objecteditor.Designer.cs">
       <DependentUpon>objecteditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObjModel.cs" />
+    <Compile Include="Particles.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Properties\AssemblyInfo.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\BasicCourseBlock.cs" />
     <Compile Include="Resources\CourseBlock.cs" />
     <Compile Include="Resources\CourseNames.cs" />
@@ -99,12 +129,20 @@
       <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\SurfaceCourseBlock.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Sky.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
+    <Compile Include="TestForm.Designer.cs" />
+    <Compile Include="TestForm1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestForm.resx</DependentUpon>
     </Compile>
+    <Compile Include="Texture.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="VBO.cs" />
     <Compile Include="VisualEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,23 +160,25 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Resources\SpatialElementRenderer.resx">
       <DependentUpon>SpatialElementRenderer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VisualEditor.resx">
       <DependentUpon>VisualEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="mariogolftest.mtl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="mariogolftest.obj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -158,8 +198,19 @@
     <None Include="Resources\highland64 logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\3d_rotate1600red.png" />
+    <None Include="Resources\3d_rotate1600.png" />
+    <None Include="Resources\41d5440f596e714d7ca33eccabc5fcab.png" />
+    <Content Include="Resources\activated.wav" />
+    <None Include="Resources\arrow ujfgb] stop.png" />
+    <None Include="Resources\arrow ujfgb].png" />
+    <None Include="Resources\arrow ujfgb] stop right left.png" />
     <Content Include="Resources\blip.png" />
     <Content Include="Resources\blipSelect.png" />
+    <Content Include="Resources\error.wav" />
+    <Content Include="Resources\revert.wav" />
+    <Content Include="Resources\selecting.wav" />
+    <Content Include="Resources\switching to.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

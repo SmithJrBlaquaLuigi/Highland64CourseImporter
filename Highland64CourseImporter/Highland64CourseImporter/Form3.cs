@@ -15,9 +15,10 @@ namespace Highland64CourseImporter
 {
     public partial class Form3 : Form
     {
-        public MG64RomFile RomFile { get; private set; }
+        public MG64RomFile RomFile { get; set; } 
 
-        public Form3()
+
+        public Form3(MG64RomFile mGRomFile)
         {
            
         }
@@ -38,6 +39,12 @@ namespace Highland64CourseImporter
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            VisualEditor form = new VisualEditor(RomFile);
+            form.Show();
         }
     }
 }

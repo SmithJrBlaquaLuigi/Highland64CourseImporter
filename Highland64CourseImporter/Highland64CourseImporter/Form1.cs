@@ -33,6 +33,8 @@ namespace Highland64CourseImporter
     {
         public MG64RomFile RomFile;
 
+        public MG64RomFile MGRomFile;
+
         public bool Objectlist { get; set; }
 
         int[] objectlist = {
@@ -154,7 +156,7 @@ namespace Highland64CourseImporter
 
         private void VisualEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VisualEditor form = new VisualEditor();
+            VisualEditor form = new VisualEditor(RomFile);
             form.Show();
         }
 
@@ -171,7 +173,7 @@ namespace Highland64CourseImporter
 
         private void levelImporterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            Form3 form = new Form3(MGRomFile);
             form.Show();
         }
 

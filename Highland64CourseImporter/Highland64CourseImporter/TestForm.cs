@@ -18,21 +18,6 @@ namespace Highland64CourseImporter
         private List<ObjectInfo> _levelObjects;
 
         private Bitmap _underlyingLevelImage;
-        
-        private SpatialElementRenderer _spatialElementRenderer { get; set; }
-
-        private ObjectCourseBlock _cbObjectList { get; set; }
-        private ObjectCourseBlock _cbObjectType { get; set; }
-        private ObjectCourseBlock _cbObjects { get; set; }
-        private ObjectCourseBlock _nudWidthScale { get; set; }
-        private ObjectCourseBlock _nudHeightScale { get; set; }
-        private ObjectCourseBlock _gbObjectSelection { get; set; }
-        private ObjectCourseBlock _nudHeight { get; set; }
-        private ObjectCourseBlock lblX { get; set; }
-        private ObjectCourseBlock lblZ { get; set; }
-        private ObjectCourseBlock _btnRemoveOld { get; set; }
-        public int SelectedIndex { get; internal set; }
-        private object Items { get; set; }
 
         public TestForm(MG64RomFile rom)
         {

@@ -121,10 +121,28 @@
   <data name="blip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3d_rotate1600red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3d_rotate1600red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="blipSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blipSelect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="highland64 logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\highland64 logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="41d5440f596e714d7ca33eccabc5fcab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\41d5440f596e714d7ca33eccabc5fcab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3d_rotate1600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3d_rotate1600.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow ujfgb]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow ujfgb].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow ujfgb] stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow ujfgb] stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow ujfgb] stop right left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow ujfgb] stop right left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using Highland64CourseImporter.Data.CourseBlocks;
+using Highland64CourseImporter.Data;
 
 
 namespace Highland64CourseImporter
@@ -17,9 +20,14 @@ namespace Highland64CourseImporter
 {
     public partial class VisualEditor : Form
     {
-        public VisualEditor()
+        
+        
+        public VisualEditor(Data.MG64RomFile romFile)
+
         {
             InitializeComponent();
+            
+
         }
 
         private void glControl1_Load(object sender, EventArgs e)
@@ -46,6 +54,13 @@ namespace Highland64CourseImporter
             GL.End();
             glControl1.SwapBuffers();
 
+
+
+        }
+
+        private void glControl1_Load_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

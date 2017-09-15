@@ -34,6 +34,7 @@
             this.pnlViewer = new System.Windows.Forms.Panel();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.pbPreview = new System.Windows.Forms.PictureBox();
+            this.spatialElementRenderer = new Highland64CourseImporter.SpatialElementRenderer();
             this.pnlObjects = new System.Windows.Forms.Panel();
             this.gbObjects = new System.Windows.Forms.GroupBox();
             this.gbObjectSelection = new System.Windows.Forms.GroupBox();
@@ -57,6 +58,7 @@
             this.pnlViewer.SuspendLayout();
             this.pnlImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
+            this.pbPreview.SuspendLayout();
             this.pnlObjects.SuspendLayout();
             this.gbObjects.SuspendLayout();
             this.gbObjectSelection.SuspendLayout();
@@ -68,10 +70,9 @@
             // lblCourse
             // 
             this.lblCourse.AutoSize = true;
-            this.lblCourse.Location = new System.Drawing.Point(18, 17);
-            this.lblCourse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCourse.Location = new System.Drawing.Point(12, 11);
             this.lblCourse.Name = "lblCourse";
-            this.lblCourse.Size = new System.Drawing.Size(64, 20);
+            this.lblCourse.Size = new System.Drawing.Size(43, 13);
             this.lblCourse.TabIndex = 1;
             this.lblCourse.Text = "Course:";
             // 
@@ -81,10 +82,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCourse.FormattingEnabled = true;
-            this.cbCourse.Location = new System.Drawing.Point(92, 12);
-            this.cbCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbCourse.Location = new System.Drawing.Point(61, 8);
             this.cbCourse.Name = "cbCourse";
-            this.cbCourse.Size = new System.Drawing.Size(297, 28);
+            this.cbCourse.Size = new System.Drawing.Size(200, 21);
             this.cbCourse.TabIndex = 2;
             this.cbCourse.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
             // 
@@ -94,9 +94,8 @@
             this.pnlSetings.Controls.Add(this.lblCourse);
             this.pnlSetings.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSetings.Location = new System.Drawing.Point(0, 0);
-            this.pnlSetings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlSetings.Name = "pnlSetings";
-            this.pnlSetings.Size = new System.Drawing.Size(409, 65);
+            this.pnlSetings.Size = new System.Drawing.Size(273, 42);
             this.pnlSetings.TabIndex = 3;
             // 
             // pnlViewer
@@ -105,40 +104,50 @@
             this.pnlViewer.Controls.Add(this.pnlSetings);
             this.pnlViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlViewer.Location = new System.Drawing.Point(0, 0);
-            this.pnlViewer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlViewer.Name = "pnlViewer";
-            this.pnlViewer.Size = new System.Drawing.Size(409, 742);
+            this.pnlViewer.Size = new System.Drawing.Size(273, 482);
             this.pnlViewer.TabIndex = 4;
             // 
             // pnlImage
             // 
             this.pnlImage.Controls.Add(this.pbPreview);
             this.pnlImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlImage.Location = new System.Drawing.Point(0, 65);
-            this.pnlImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlImage.Location = new System.Drawing.Point(0, 42);
             this.pnlImage.Name = "pnlImage";
-            this.pnlImage.Size = new System.Drawing.Size(409, 677);
+            this.pnlImage.Size = new System.Drawing.Size(273, 440);
             this.pnlImage.TabIndex = 4;
             // 
             // pbPreview
             // 
+            this.pbPreview.Controls.Add(this.spatialElementRenderer);
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
-            this.pbPreview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(409, 677);
+            this.pbPreview.Size = new System.Drawing.Size(273, 440);
             this.pbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreview.TabIndex = 0;
             this.pbPreview.TabStop = false;
+            // 
+            // spatialElementRenderer
+            // 
+            this.spatialElementRenderer.BackColor = System.Drawing.Color.Transparent;
+            this.spatialElementRenderer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spatialElementRenderer.Location = new System.Drawing.Point(0, 0);
+            this.spatialElementRenderer.MaxX = 1D;
+            this.spatialElementRenderer.MaxY = 0D;
+            this.spatialElementRenderer.MinX = -1D;
+            this.spatialElementRenderer.MinY = -1D;
+            this.spatialElementRenderer.Name = "spatialElementRenderer";
+            this.spatialElementRenderer.Size = new System.Drawing.Size(273, 440);
+            this.spatialElementRenderer.TabIndex = 1;
             // 
             // pnlObjects
             // 
             this.pnlObjects.Controls.Add(this.gbObjects);
             this.pnlObjects.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlObjects.Location = new System.Drawing.Point(409, 0);
-            this.pnlObjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlObjects.Location = new System.Drawing.Point(273, 0);
             this.pnlObjects.Name = "pnlObjects";
-            this.pnlObjects.Size = new System.Drawing.Size(219, 742);
+            this.pnlObjects.Size = new System.Drawing.Size(146, 482);
             this.pnlObjects.TabIndex = 5;
             // 
             // gbObjects
@@ -147,10 +156,8 @@
             this.gbObjects.Controls.Add(this.cbObjects);
             this.gbObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbObjects.Location = new System.Drawing.Point(0, 0);
-            this.gbObjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbObjects.Name = "gbObjects";
-            this.gbObjects.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbObjects.Size = new System.Drawing.Size(219, 742);
+            this.gbObjects.Size = new System.Drawing.Size(146, 482);
             this.gbObjects.TabIndex = 0;
             this.gbObjects.TabStop = false;
             this.gbObjects.Text = "Objects";
@@ -173,11 +180,9 @@
             this.gbObjectSelection.Controls.Add(this.lblObjectType);
             this.gbObjectSelection.Controls.Add(this.cbObjectType);
             this.gbObjectSelection.Enabled = false;
-            this.gbObjectSelection.Location = new System.Drawing.Point(15, 65);
-            this.gbObjectSelection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbObjectSelection.Location = new System.Drawing.Point(10, 42);
             this.gbObjectSelection.Name = "gbObjectSelection";
-            this.gbObjectSelection.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbObjectSelection.Size = new System.Drawing.Size(195, 537);
+            this.gbObjectSelection.Size = new System.Drawing.Size(130, 349);
             this.gbObjectSelection.TabIndex = 6;
             this.gbObjectSelection.TabStop = false;
             this.gbObjectSelection.Text = "Object Select";
@@ -185,10 +190,9 @@
             // btnRemoveOld
             // 
             this.btnRemoveOld.Enabled = false;
-            this.btnRemoveOld.Location = new System.Drawing.Point(26, 485);
-            this.btnRemoveOld.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveOld.Location = new System.Drawing.Point(17, 315);
             this.btnRemoveOld.Name = "btnRemoveOld";
-            this.btnRemoveOld.Size = new System.Drawing.Size(153, 35);
+            this.btnRemoveOld.Size = new System.Drawing.Size(102, 23);
             this.btnRemoveOld.TabIndex = 17;
             this.btnRemoveOld.Text = "Remove Object";
             this.btnRemoveOld.UseVisualStyleBackColor = true;
@@ -196,10 +200,9 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(26, 440);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddNew.Location = new System.Drawing.Point(17, 286);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(153, 35);
+            this.btnAddNew.Size = new System.Drawing.Size(102, 23);
             this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "Add New Object";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -208,103 +211,93 @@
             // lblZ
             // 
             this.lblZ.AutoSize = true;
-            this.lblZ.Location = new System.Drawing.Point(64, 400);
-            this.lblZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblZ.Location = new System.Drawing.Point(43, 260);
             this.lblZ.Name = "lblZ";
-            this.lblZ.Size = new System.Drawing.Size(0, 20);
+            this.lblZ.Size = new System.Drawing.Size(0, 13);
             this.lblZ.TabIndex = 15;
             // 
             // lblX
             // 
             this.lblX.AutoSize = true;
-            this.lblX.Location = new System.Drawing.Point(64, 365);
-            this.lblX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblX.Location = new System.Drawing.Point(43, 237);
             this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(0, 20);
+            this.lblX.Size = new System.Drawing.Size(0, 13);
             this.lblX.TabIndex = 14;
             // 
             // lblObjectZ
             // 
             this.lblObjectZ.AutoSize = true;
-            this.lblObjectZ.Location = new System.Drawing.Point(24, 400);
-            this.lblObjectZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblObjectZ.Location = new System.Drawing.Point(16, 260);
             this.lblObjectZ.Name = "lblObjectZ";
-            this.lblObjectZ.Size = new System.Drawing.Size(23, 20);
+            this.lblObjectZ.Size = new System.Drawing.Size(17, 13);
             this.lblObjectZ.TabIndex = 13;
             this.lblObjectZ.Text = "Z:";
             // 
             // lblObjectX
             // 
             this.lblObjectX.AutoSize = true;
-            this.lblObjectX.Location = new System.Drawing.Point(24, 365);
-            this.lblObjectX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblObjectX.Location = new System.Drawing.Point(16, 237);
             this.lblObjectX.Name = "lblObjectX";
-            this.lblObjectX.Size = new System.Drawing.Size(24, 20);
+            this.lblObjectX.Size = new System.Drawing.Size(17, 13);
             this.lblObjectX.TabIndex = 12;
             this.lblObjectX.Text = "X:";
             // 
             // lblWidthScale
             // 
             this.lblWidthScale.AutoSize = true;
-            this.lblWidthScale.Location = new System.Drawing.Point(40, 288);
-            this.lblWidthScale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWidthScale.Location = new System.Drawing.Point(27, 187);
             this.lblWidthScale.Name = "lblWidthScale";
-            this.lblWidthScale.Size = new System.Drawing.Size(94, 20);
+            this.lblWidthScale.Size = new System.Drawing.Size(65, 13);
             this.lblWidthScale.TabIndex = 11;
             this.lblWidthScale.Text = "Width Scale";
             // 
             // nudWidthScale
             // 
-            this.nudWidthScale.Location = new System.Drawing.Point(15, 312);
-            this.nudWidthScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudWidthScale.Location = new System.Drawing.Point(10, 203);
             this.nudWidthScale.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.nudWidthScale.Name = "nudWidthScale";
-            this.nudWidthScale.Size = new System.Drawing.Size(147, 26);
+            this.nudWidthScale.Size = new System.Drawing.Size(98, 20);
             this.nudWidthScale.TabIndex = 10;
             this.nudWidthScale.ValueChanged += new System.EventHandler(this.nudWidthScale_ValueChanged);
             // 
             // lblHeightScale
             // 
             this.lblHeightScale.AutoSize = true;
-            this.lblHeightScale.Location = new System.Drawing.Point(40, 220);
-            this.lblHeightScale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeightScale.Location = new System.Drawing.Point(27, 143);
             this.lblHeightScale.Name = "lblHeightScale";
-            this.lblHeightScale.Size = new System.Drawing.Size(100, 20);
+            this.lblHeightScale.Size = new System.Drawing.Size(68, 13);
             this.lblHeightScale.TabIndex = 9;
             this.lblHeightScale.Text = "Height Scale";
             // 
             // nudHeightScale
             // 
-            this.nudHeightScale.Location = new System.Drawing.Point(15, 245);
-            this.nudHeightScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudHeightScale.Location = new System.Drawing.Point(10, 159);
             this.nudHeightScale.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.nudHeightScale.Name = "nudHeightScale";
-            this.nudHeightScale.Size = new System.Drawing.Size(147, 26);
+            this.nudHeightScale.Size = new System.Drawing.Size(98, 20);
             this.nudHeightScale.TabIndex = 8;
             this.nudHeightScale.ValueChanged += new System.EventHandler(this.nudHeightScale_ValueChanged);
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(60, 160);
-            this.lblHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeight.Location = new System.Drawing.Point(40, 104);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(56, 20);
+            this.lblHeight.Size = new System.Drawing.Size(38, 13);
             this.lblHeight.TabIndex = 7;
             this.lblHeight.Text = "Height";
             // 
             // nudHeight
             // 
-            this.nudHeight.Location = new System.Drawing.Point(15, 185);
-            this.nudHeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudHeight.Location = new System.Drawing.Point(10, 120);
             this.nudHeight.Maximum = new decimal(new int[] {
             32767,
             0,
@@ -316,7 +309,7 @@
             0,
             -2147483648});
             this.nudHeight.Name = "nudHeight";
-            this.nudHeight.Size = new System.Drawing.Size(147, 26);
+            this.nudHeight.Size = new System.Drawing.Size(98, 20);
             this.nudHeight.TabIndex = 6;
             this.nudHeight.ValueChanged += new System.EventHandler(this.nudHeight_ValueChanged);
             // 
@@ -326,20 +319,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbObjectList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbObjectList.FormattingEnabled = true;
-            this.cbObjectList.Location = new System.Drawing.Point(9, 29);
-            this.cbObjectList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbObjectList.Location = new System.Drawing.Point(6, 19);
             this.cbObjectList.Name = "cbObjectList";
-            this.cbObjectList.Size = new System.Drawing.Size(168, 28);
+            this.cbObjectList.Size = new System.Drawing.Size(113, 21);
             this.cbObjectList.TabIndex = 3;
             this.cbObjectList.SelectedIndexChanged += new System.EventHandler(this.cbObjectList_SelectedIndexChanged);
             // 
             // lblObjectType
             // 
             this.lblObjectType.AutoSize = true;
-            this.lblObjectType.Location = new System.Drawing.Point(60, 77);
-            this.lblObjectType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblObjectType.Location = new System.Drawing.Point(40, 50);
             this.lblObjectType.Name = "lblObjectType";
-            this.lblObjectType.Size = new System.Drawing.Size(43, 20);
+            this.lblObjectType.Size = new System.Drawing.Size(31, 13);
             this.lblObjectType.TabIndex = 5;
             this.lblObjectType.Text = "Type";
             // 
@@ -349,20 +340,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbObjectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbObjectType.FormattingEnabled = true;
-            this.cbObjectType.Location = new System.Drawing.Point(9, 106);
-            this.cbObjectType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbObjectType.Location = new System.Drawing.Point(6, 69);
             this.cbObjectType.Name = "cbObjectType";
-            this.cbObjectType.Size = new System.Drawing.Size(168, 28);
+            this.cbObjectType.Size = new System.Drawing.Size(113, 21);
             this.cbObjectType.TabIndex = 4;
             this.cbObjectType.SelectedIndexChanged += new System.EventHandler(this.cbObjectType_SelectedIndexChanged);
             // 
             // cbObjects
             // 
             this.cbObjects.AutoSize = true;
-            this.cbObjects.Location = new System.Drawing.Point(30, 29);
-            this.cbObjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbObjects.Location = new System.Drawing.Point(20, 19);
             this.cbObjects.Name = "cbObjects";
-            this.cbObjects.Size = new System.Drawing.Size(143, 24);
+            this.cbObjects.Size = new System.Drawing.Size(98, 17);
             this.cbObjects.TabIndex = 0;
             this.cbObjects.Text = "Enable Objects";
             this.cbObjects.UseVisualStyleBackColor = true;
@@ -370,19 +359,19 @@
             // 
             // TestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 742);
+            this.ClientSize = new System.Drawing.Size(419, 482);
             this.Controls.Add(this.pnlViewer);
             this.Controls.Add(this.pnlObjects);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TestForm";
-            this.Text = "Object Editor V0.2";
+            this.Text = "TestForm";
             this.pnlSetings.ResumeLayout(false);
             this.pnlSetings.PerformLayout();
             this.pnlViewer.ResumeLayout(false);
             this.pnlImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
+            this.pbPreview.ResumeLayout(false);
             this.pnlObjects.ResumeLayout(false);
             this.gbObjects.ResumeLayout(false);
             this.gbObjects.PerformLayout();
