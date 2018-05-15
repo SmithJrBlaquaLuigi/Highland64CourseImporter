@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highland64CourseImporter", "Highland64CourseImporter\Highland64CourseImporter.csproj", "{7973121D-E219-41C0-B0D4-CD8AA1E1E551}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highland64CourseImporter (Mario Golf 64 Hacking)", "Highland64CourseImporter\Highland64CourseImporter (Mario Golf 64 Hacking).csproj", "{7973121D-E219-41C0-B0D4-CD8AA1E1E551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0E9DA85-2DB4-4F0A-8C1A-BFFE8206BD9C}
 	EndGlobalSection
 EndGlobal

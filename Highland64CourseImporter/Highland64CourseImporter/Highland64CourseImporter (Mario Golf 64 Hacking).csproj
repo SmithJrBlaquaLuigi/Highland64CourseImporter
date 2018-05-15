@@ -208,6 +208,7 @@
     <Content Include="Resources\blip.png" />
     <Content Include="Resources\blipSelect.png" />
     <Content Include="Resources\error.wav" />
+    <None Include="Resources\position label.png" />
     <Content Include="Resources\revert.wav" />
     <Content Include="Resources\selecting.wav" />
     <Content Include="Resources\switching to.wav" />

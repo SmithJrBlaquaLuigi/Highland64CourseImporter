@@ -134,7 +134,7 @@
          public CourseBlock Pointer6;
          public SurfaceCourseBlock SurfaceMap;
  
-         public HeightDataEncoding.HeightMapVertex[,] HeightMapData;
+         public _HeightDataEncoding.HeightMapVertex[,] HeightMapData;
  
          public CourseTableEntry(string courseName, int index, CourseBlock p1, CourseBlock p2, ObjectCourseBlock p3, CourseBlock p4, CourseBlock p5, CourseBlock p6, SurfaceCourseBlock p7)
          {
@@ -148,7 +148,7 @@
              Pointer6 = p6;
              SurfaceMap = p7;
  
-             HeightMapData = HeightDataEncoding.DecodeHeightMap(p1.GetAsBytes(), p2.GetAsBytes());
+             HeightMapData = _HeightDataEncoding.DecodeHeightMap(p1.GetAsBytes(), p2.GetAsBytes());
          }
  
          public void PrepForSaving(MG64RomFile file)
@@ -156,7 +156,7 @@
              //Convert height map data back to encoded formats
              byte[] heightMap1, heightMap2;
  
-             HeightDataEncoding.EncodeHeightMap(HeightMapData, out heightMap1, out heightMap2);
+             _HeightDataEncoding.EncodeHeightMap(HeightMapData, out heightMap1, out heightMap2);
  
              if (heightMap1.Length <= HeightData1.BlockLength)
                  HeightData1 = new BasicCourseBlock(heightMap1, HeightData1.RomOffset, heightMap1.Length);

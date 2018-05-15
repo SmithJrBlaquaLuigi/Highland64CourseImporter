@@ -20,8 +20,11 @@ namespace Highland64CourseImporter
 {
     public partial class VisualEditor : Form
     {
+        MG64RomFile romFile;
+        _HeightDataEncoding heightdataencoding;
+        CourseBlock courseBlock;
         
-        
+
         public VisualEditor(Data.MG64RomFile romFile)
 
         {
@@ -60,6 +63,13 @@ namespace Highland64CourseImporter
 
         private void glControl1_Load_1(object sender, EventArgs e)
         {
+            
+        }
+
+        private void VisualEditor_Load(object sender, EventArgs e)
+        {
+            textBox1.Parent = glControl1;
+            
             
         }
     }

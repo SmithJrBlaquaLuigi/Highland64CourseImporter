@@ -21,6 +21,11 @@ namespace Highland64CourseImporter.Data.CourseBlocks
         /// Converts the block data into a byte array to store it back in the rom file.
         /// </summary>
         public abstract byte[] GetAsBytes();
+        
+        byte[] CourseBlockData = new byte[0x04];
+        byte[] Surfacedata = new byte[0x10];
+        byte[] objectdata = new byte[0x2D];      
+
 
         /// <summary>
         /// Constructor. The byte[] data will be used by the child class.

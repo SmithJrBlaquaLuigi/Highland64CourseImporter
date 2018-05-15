@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highland64CourseImporter
 {
-    public class HeightDataEncoding
+    public class _HeightDataEncoding
     {
         internal struct CommandByte
         {

@@ -173,7 +173,7 @@ namespace Highland64CourseImporter
 
         private void levelImporterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3(MGRomFile);
+            Form3 form = new Form3();
             form.Show();
         }
 

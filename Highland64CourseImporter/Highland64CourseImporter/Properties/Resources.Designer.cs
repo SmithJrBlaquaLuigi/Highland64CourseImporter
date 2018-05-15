@@ -93,6 +93,16 @@ namespace Highland64CourseImporter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angle_label {
+            get {
+                object obj = ResourceManager.GetObject("angle label", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_ujfgb_ {
             get {
                 object obj = ResourceManager.GetObject("arrow ujfgb]", resourceCulture);
@@ -146,6 +156,16 @@ namespace Highland64CourseImporter.Properties {
         internal static System.Drawing.Bitmap highland64_logo {
             get {
                 object obj = ResourceManager.GetObject("highland64 logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap position_label {
+            get {
+                object obj = ResourceManager.GetObject("position label", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
